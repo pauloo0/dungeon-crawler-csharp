@@ -1,13 +1,13 @@
 ﻿Console.WriteLine("===== C# DUNGEON CRAWLER GAME ====");
 Console.WriteLine("Before we start, what's your name?");
 string? heroName = Console.ReadLine();
-if (heroName == "") heroName = "Hero";
+if (heroName == "" || heroName is null) heroName = "Hero";
 
 Console.WriteLine("What a cool name! Nice to meet you {0}!", heroName);
 
 Console.WriteLine("Ready to enter the dungeon? Y/n");
 string? startGame = Console.ReadLine();
-if (startGame == "") startGame = "y";
+if (startGame == "" || startGame is null) startGame = "y";
 if (startGame == "n") return;
 
 Console.Clear();
