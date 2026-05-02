@@ -1,7 +1,6 @@
 ﻿Console.WriteLine("===== C# DUNGEON CRAWLER GAME ====");
 Console.WriteLine("Before we start, what's your name?");
-string? heroName = Console.ReadLine();
-if (heroName == "" || heroName is null) heroName = "Hero";
+string? heroName = Console.ReadLine() ?? "Hero";
 
 Console.WriteLine("What a cool name! Nice to meet you {0}!", heroName);
 
@@ -34,7 +33,13 @@ while (player.IsAlive && enemy.IsAlive)
 
   if (move == "1")
   {
-    Console.WriteLine("You attacked and dealt {0} damage.", "some");
+    int playerDamage = player.Attack - enemy.Defence;
+    enemy.TakeDamage(playerDamage);
+    Console.WriteLine("You attacked and dealt {0} damage.", playerDamage);
+
+    int enemyDamage = enemy.Attack - player.Defence;
+    player.TakeDamage(enemyDamage);
+    Console.WriteLine("{0} attacked and dealt {1} damage.", enemy.Name, enemyDamage);
   }
   if (move == "2")
   {

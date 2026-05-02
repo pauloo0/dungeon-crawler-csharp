@@ -16,4 +16,9 @@ public class Character
   }
 
   public bool IsAlive => CurrentHP > 0;
+
+  public void TakeDamage(int damage)
+  {
+    this.CurrentHP = damage > this.CurrentHP ? 0 : this.CurrentHP - damage;
+  }
 }
