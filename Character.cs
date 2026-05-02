@@ -17,8 +17,17 @@ public class Character
 
   public bool IsAlive => CurrentHP > 0;
 
-  public void TakeDamage(int damage)
+  public int TakeDamage(int attackerAttack)
   {
-    this.CurrentHP = damage > this.CurrentHP ? 0 : this.CurrentHP - damage;
+    int baseDamage = attackerAttack - this.Defence;
+
+    Random rnd = new();
+    double multiplier = rnd.NextDouble() * (1.2 - 0.8) + 0.8;
+    double damageMultipliedDouble = Math.Round(baseDamage * multiplier, 2);
+    int damageDealt = (int)Math.Round(damageMultipliedDouble);
+
+    this.CurrentHP = damageDealt > this.CurrentHP ? 0 : this.CurrentHP - damageDealt;
+
+    return damageDealt;
   }
 }

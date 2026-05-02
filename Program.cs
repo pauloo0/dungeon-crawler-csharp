@@ -33,12 +33,10 @@ while (player.IsAlive && enemy.IsAlive)
 
   if (move == "1")
   {
-    int playerDamage = player.Attack - enemy.Defence;
-    enemy.TakeDamage(playerDamage);
+    int playerDamage = enemy.TakeDamage(player.Attack);
     Console.WriteLine("You attacked and dealt {0} damage.", playerDamage);
 
-    int enemyDamage = enemy.Attack - player.Defence;
-    player.TakeDamage(enemyDamage);
+    int enemyDamage = player.TakeDamage(enemy.Attack);
     Console.WriteLine("{0} attacked and dealt {1} damage.", enemy.Name, enemyDamage);
   }
   if (move == "2")
