@@ -41,7 +41,9 @@ while (player.IsAlive && enemy.IsAlive)
   }
   if (move == "2")
   {
-    Console.WriteLine("You defended and mitigated {0} damage. You lost {1} HP.", "some", "some");
+    int mitigatedDamage = 2;
+    int enemyDamage = player.TakeDamage(enemy.Attack - mitigatedDamage);
+    Console.WriteLine("You defended and mitigated {0} damage. You lost {1} HP.", mitigatedDamage, enemyDamage);
   }
 }
 
