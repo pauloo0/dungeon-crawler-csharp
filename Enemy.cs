@@ -11,10 +11,10 @@ public class Enemy : Character
 
   private static readonly Dictionary<EnemyType, CharacterStats> StatsTable = new()
   {
-    {EnemyType.Goblin, new CharacterStats(30,8,2 )},
-    {EnemyType.Skeleton, new CharacterStats(45,12,4 )},
-    {EnemyType.Orc, new CharacterStats(70,18,8 )},
-    {EnemyType.Boss, new CharacterStats(150,25,15 )}
+    {EnemyType.Goblin, new CharacterStats(30, 8, 1 )},
+    {EnemyType.Skeleton, new CharacterStats(45, 10, 7 )},
+    {EnemyType.Orc, new CharacterStats(60, 14, 4 )},
+    {EnemyType.Boss, new CharacterStats(120, 18, 8 )}
   };
 
   public EnemyType Type { get; private set; }
