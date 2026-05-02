@@ -6,8 +6,7 @@ if (heroName == "" || heroName is null) heroName = "Hero";
 Console.WriteLine("What a cool name! Nice to meet you {0}!", heroName);
 
 Console.WriteLine("Ready to enter the dungeon? Y/n");
-string? startGame = Console.ReadLine();
-if (startGame == "" || startGame is null) startGame = "y";
+string? startGame = Console.ReadLine() ?? "y";
 if (startGame == "n") return;
 
 Character player = new(heroName);
